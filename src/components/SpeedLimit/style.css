@@ -1,0 +1,16 @@
+.train__speed {
+  border: 1px solid #131313;
+}
+.train__speed-title {
+  margin: 0;
+  padding: 8px 10px;
+  border-bottom: 1px solid #131313;
+}
+.train__speed-info {
+  padding: 5px 10px;
+}
+
+.train__speed-button {
+  padding: 5px 10px;
+  margin: 10px;
+}

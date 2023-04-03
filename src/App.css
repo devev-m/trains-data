@@ -1,16 +1,6 @@
 .title {
   text-align: center;
 }
-
 .wrapper {
   display: flex;
-}
-
-.train__title {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.train__speed-title {
-  margin-top: 7px;
 }
