@@ -1,6 +1,6 @@
 import "./style.css";
 
-const TrainLimits = ({ item, index, selectedTrain, setSelectedTrain }) => {
+const TrainLimitEdit = ({ item, index, selectedTrain, setSelectedTrain }) => {
   const handleSpeedLimitChange = (e: any, index: number) => {
     const newLimit = +e.target.value;
     const newSpeedLimits = [...selectedTrain.speedLimits];
@@ -25,4 +25,4 @@ const TrainLimits = ({ item, index, selectedTrain, setSelectedTrain }) => {
   );
 };
 
-export default TrainLimits;
+export default TrainLimitEdit;

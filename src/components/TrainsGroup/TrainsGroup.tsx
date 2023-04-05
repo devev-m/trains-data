@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { API_URL } from "../../constants/api";
 import { ITrain } from "../../models/train";
-import TrainItem from "./components/TrainItem/index";
-import Train from "./components/Train";
+import TrainForm from "./components/TrainForm/TrainForm";
 import "./style.css";
 
 const TrainsGroup = () => {
@@ -26,17 +25,18 @@ const TrainsGroup = () => {
 
   return (
     <>
-      <div>
+      <div className="train__items">
         {trains.map((train) => (
-          <TrainItem
+          <div
+            className="train__item"
             key={train.name}
-            train={train}
-            handleTrainClick={showTrainContainer}
-          />
+            onClick={() => showTrainContainer(train)}>
+            {train.name}
+          </div>
         ))}
       </div>
       {selectedTrain && (
-        <Train
+        <TrainForm
           key={selectedTrain.name}
           selectedTrain={selectedTrain}
           setSelectedTrain={setSelectedTrain}

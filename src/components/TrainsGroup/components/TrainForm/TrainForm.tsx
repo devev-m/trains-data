@@ -1,7 +1,7 @@
-import TrainLimits from "./components/TrainLimits/index";
+import TrainLimitEdit from "./components/TrainLimitEdit/TrainLimitEdit";
 import "./style.css";
 
-const Train = ({ selectedTrain, setSelectedTrain }) => {
+const TrainForm = ({ selectedTrain, setSelectedTrain }) => {
   const handleSubmitFormSpeeds = (e: any) => {
     e.preventDefault();
     const validSpeedLimits = selectedTrain.speedLimits.filter((item: any) => item.speedLimit > 0);
@@ -27,7 +27,7 @@ const Train = ({ selectedTrain, setSelectedTrain }) => {
         className="train__speed-form"
         onSubmit={handleSubmitFormSpeeds}>
         {selectedTrain.speedLimits.map((item: any, index: number) => (
-          <TrainLimits
+          <TrainLimitEdit
             key={item.name}
             item={item}
             index={index}
@@ -41,4 +41,4 @@ const Train = ({ selectedTrain, setSelectedTrain }) => {
   );
 };
 
-export default Train;
+export default TrainForm;

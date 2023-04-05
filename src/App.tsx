@@ -1,4 +1,4 @@
-import TrainsGroup from "./components/TrainsGroup";
+import TrainsGroup from "./components/TrainsGroup/TrainsGroup";
 import "./App.css";
 
 function App() {
