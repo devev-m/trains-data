@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { API_URL } from "../../constants/api";
 import { ITrain } from "../../models/train";
-import Train from "../Train";
+import TrainItem from "./components/TrainItem/index";
+import Train from "./components/Train";
 import "./style.css";
 
-const TrainsGroup = ({ setSelectedTrain }: any) => {
+const TrainsGroup = () => {
   const [trains, setTrains] = useState<ITrain[]>([]);
+  const [selectedTrain, setSelectedTrain] = useState<ITrain | null>(null);
 
   useEffect(() => {
     fetch(API_URL)
@@ -18,16 +20,29 @@ const TrainsGroup = ({ setSelectedTrain }: any) => {
       });
   }, []);
 
+  const showTrainContainer = (train: ITrain) => {
+    setSelectedTrain(train);
+  };
+
   return (
-    <div className="train__names">
-      {trains.map((train) => (
+    <>
+      <div>
+        {trains.map((train) => (
+          <TrainItem
+            key={train.name}
+            train={train}
+            handleTrainClick={showTrainContainer}
+          />
+        ))}
+      </div>
+      {selectedTrain && (
         <Train
-          key={train.name}
-          train={train}
+          key={selectedTrain.name}
+          selectedTrain={selectedTrain}
           setSelectedTrain={setSelectedTrain}
         />
-      ))}
-    </div>
+      )}
+    </>
   );
 };
 

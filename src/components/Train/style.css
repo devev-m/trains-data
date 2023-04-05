@@ -1,7 +1,0 @@
-.train__title {
-  padding: 10px 30px;
-  cursor: pointer;
-}
-.train__title:not(:last-child) {
-  border-bottom: 1px solid #131313;
-}
